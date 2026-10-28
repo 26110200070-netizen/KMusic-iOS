@@ -1,11 +1,11 @@
 import Foundation
 
-public struct VisitorDataGenerator {
+public struct VisitorDataGenerator: Sendable {
     private static let idCharset = Array(
         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-"
     )
 
-    public static func generate() -> String {
+    public nonisolated static func generate() -> String {
         let id = generateRandomID(length: 11)
         let timestamp = UInt64(Date().timeIntervalSince1970)
         let proto = encodeProtobuf(id: id, timestamp: timestamp)

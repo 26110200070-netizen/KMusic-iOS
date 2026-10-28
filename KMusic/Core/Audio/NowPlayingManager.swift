@@ -62,8 +62,8 @@ public final class NowPlayingManager {
             return .success
         }
 
-        commandCenter.togglePlayPauseMusicCommand.isEnabled = true
-        commandCenter.togglePlayPauseMusicCommand.addTarget { _ in
+        commandCenter.togglePlayPauseCommand.isEnabled = true
+        commandCenter.togglePlayPauseCommand.addTarget { _ in
             onPlay()
             return .success
         }
